@@ -72,7 +72,7 @@ const display_dog_info = (dog) => {
             dog_update.isGoodDog ? goodDog = "Good Dog!" : goodDog = "Bad Dog!"
             button.textContent = goodDog 
             if(filter){
-                document.getElementById(`${dog.id}`).remove()
+                document.getElementById(dog.id).remove()
                 info_div.remove()
             }   
         })
