@@ -12,16 +12,8 @@ addEventListener("DOMContentLoaded", () => {
   function showDogs(arr){
     arr.map(dog => showDog(dog))
     filter.addEventListener("click", ()=>{
-      // dogBar.innerHTML = ""
       button.innerText = button.innerText === on ? button.innerText = off : button.innerText = on
-      // let goodDogs = arr.filter(dog => dog.isGoodDog)
-      // if (button.innerText === on) {
-      //   goodDogs.forEach(dog=> showDog(dog))
-      // } else {
-      //   arr.forEach(dog=> showDog(dog))
-      // }
       fetchDogs()
-      // turnary is a no  (button.innerText === on) ? goodDogs.forEach(dog=> showDog(dog)) : arr.forEach(dog=> showDog(dog))
     })
   }
 
@@ -70,14 +62,8 @@ addEventListener("DOMContentLoaded", () => {
       })
       .then(resp => resp.json())
       .then(updatedDog => {
-        // grab the dogs span and toggle it? 
         dog = updatedDog
-        // debugger
-        // const dogSpan = document.querySelector(`#dog-${dog.id}`)
         btn.innerText = dog.isGoodDog ? btn.innerText = "Is Bad Dog" : btn.innerText = "Is Good Dog"
-        // if (button.innerText == on) {
-        //   dog.isGoodDog ? showDog(dog) : dogSpan.remove()
-        // }
         fetchDogs()
       })
       .catch(error => console.log("that didn't work"))
